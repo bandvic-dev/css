@@ -1,0 +1,46 @@
+#snowFalls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 999;
+}
+
+#snowFalls:before,
+#snowFalls:after {
+    content: " ";
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+#snowFalls:before {
+    background: url('snow-1.png');
+    animation-name: snowFalls-1;
+    animation-duration: 35000ms;
+ }
+
+ #snowFalls:after {
+    background: url('snow-2.png');
+    animation-name: snowFalls-2;
+    animation-duration: 65000ms;
+ }
+
+ @keyframes snowFalls-1 {
+    0% {opacity: 0; background-position: left 0 top 0px;}
+    3% {opacity: 1;}
+    97% {opacity: 1;}
+    100% {opacity: 0; background-position: left -200px top 100vh;}
+}
+@keyframes snowFalls-2 {
+    0% {opacity: 0; background-position: left 100px top 180px;}
+    3% {opacity: 1;}
+    97% {opacity: 1;}
+    100% {opacity: 0; background-position: left 200px top 100vh;}
+}
